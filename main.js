@@ -124,6 +124,8 @@ const skills = [
     { name: 'JWT', icon: 'https://www.svgrepo.com/show/306280/jsonwebtokens.svg' },
     { name: 'VS Code', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
     { name: 'PyCharm', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg' },
+    { name: 'Cursor', icon: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/cursor.png' },
+    { name: 'Claude', icon: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/claude-color.png' },
     
 ];
 
