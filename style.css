@@ -1,4 +1,3 @@
-/* ── RESET & VARIABLES ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -23,9 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ══════════════════════════════
-   NAV
-══════════════════════════════ */
+/*------- NAV -------*/
 nav {
   position: fixed; top: 0; left: 0; right: 0;
   z-index: 200;
@@ -60,7 +57,7 @@ nav.scrolled {
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--text); }
-/* Hide the mobile menu icon completely by default on desktop computers */
+
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -71,9 +68,7 @@ nav.scrolled {
 }
 
 
-/* ══════════════════════════════
-   HERO
-══════════════════════════════ */
+/*------- HERO --------*/
 #hero {
   position: relative;
   min-height: 100vh;
@@ -183,9 +178,7 @@ nav.scrolled {
   to   { opacity:1; transform: translateY(0); }
 }
 
-/* ══════════════════════════════
-   SECTION BASE
-══════════════════════════════ */
+/*---------- SECTION BASE ---------*/
 section { padding: 7rem 4rem; }
 .section-label {
   font-size: .72rem; font-weight: 600; letter-spacing: .18em;
@@ -200,9 +193,7 @@ section { padding: 7rem 4rem; }
 .section-body { color: var(--muted); line-height: 1.82; max-width: 540px; font-size: .95rem; }
 .divider { width: 100%; height: 1px; background: var(--border); }
 
-/* ══════════════════════════════
-   ABOUT
-══════════════════════════════ */
+/*-------- ABOUT ---------*/
 #about { 
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -222,9 +213,7 @@ section { padding: 7rem 4rem; }
 }
 .tag:hover { border-color: var(--accent); color: var(--accent); background: #E8623A0A; }
 
-/* ══════════════════════════════
-   EXPERIENCE
-══════════════════════════════ */
+/*-------- EXPERIENCE ---------*/
 #experience { background: var(--surface); }
 .exp-list { display: flex; flex-direction: column; gap: 2rem; margin-top: 3.5rem; }
 .exp-card {
@@ -258,18 +247,15 @@ section { padding: 7rem 4rem; }
 }
 
 
-/* ══════════════════════════════
-   PROJECTS — SCROLL ZOOM
-══════════════════════════════ */
+/*-------- PROJECTS — SCROLL ZOOM ---------*/
 #projects { padding: 7rem 0; }
 .projects-intro {
   padding: 0 4rem 4rem;
 }
 
-/* sticky scroll container */
 .project-scroll-section {
   position: relative;
-  height: 200vh; /* Drives the pin duration timeline */
+  height: 200vh;
 }
 .project-sticky {
   position: sticky;
@@ -281,10 +267,9 @@ section { padding: 7rem 4rem; }
   overflow: hidden;
 }
 
-/* The card container frame that handles your JS dynamic scale triggers */
 .project-showcase {
   position: relative;
-  width: 100%; /* Expands the track width to make room for side-by-side elements */
+  width: 100%; 
   max-width: 1150px;
   border-radius: 20px;
   overflow: hidden;
@@ -294,26 +279,26 @@ section { padding: 7rem 4rem; }
 }
 .project-showcase:hover { box-shadow: 0 32px 80px rgba(0,0,0,.2); }
 
-/* The inner presentation wrapper panel - DEFINED EXPLICITLY FIRST */
+
 .project-showcase-inner {
   position: relative;
   width: 100%;
-  min-height: 70vh; /* Forces both project container panels to keep an identical structural baseline height */
+  min-height: 70vh; 
   display: flex !important;
-  flex-direction: row !important; /* Guarantees horizontal alignment across all desktop browser viewports */
+  flex-direction: row !important; 
   align-items: center; 
   justify-content: space-between;
   padding: 4.5rem 5rem;
   gap: 4rem; 
 }
 
-/* Background Color Panel Overrides */
+
 .project-showcase-inner.sentinels { background: #1A1814; color: #F0EDE5; }
 .project-showcase-inner.wealthfy  { background: #0D1A14; color: #E5F0EA; }
 
-/* ── LEFT COLUMN: TYPOGRAPHY LAYOUT CONTENT ── */
+
 .ps-content { 
-  flex: 1 1 45%; /* Allocates clean half space boundaries */
+  flex: 1 1 45%; 
   position: relative; 
   z-index: 2; 
   text-align: left;
@@ -351,9 +336,9 @@ section { padding: 7rem 4rem; }
 .ps-link-ghost { border: 1.5px solid #FFFFFF25; color: rgba(255,255,255,.7); }
 .ps-link-ghost:hover { border-color: #FFFFFF60; color: #fff; }
 
-/* ── RIGHT COLUMN: FLOATING MOCKUP CARD FRAME ── */
+
 .ps-visual-frame {
-  flex: 1 1 65%; /* Grabs the matching half layout footprint on the right */
+  flex: 1 1 65%; 
   max-width: 650px;
   position: relative;
   border-radius: 12px;
@@ -370,12 +355,10 @@ section { padding: 7rem 4rem; }
   object-fit: contain;
 }
 
-/* Micro-Interaction Card Float Up Trigger */
 .project-showcase:hover .ps-visual-frame {
   transform: translateY(-8px) scale(1.02);
 }
 
-/* Ambient Vector Lighting Overlays */
 .ps-visual-glow {
   position: absolute; 
   inset: 0;
@@ -386,7 +369,6 @@ section { padding: 7rem 4rem; }
 .sentinels .ps-visual-glow { background: radial-gradient(circle at 70% 40%, rgba(232, 98, 58, 0.15) 0%, transparent 65%); }
 .wealthfy  .ps-visual-glow { background: radial-gradient(circle at 70% 40%, rgba(34, 197, 94, 0.12) 0%, transparent 65%); }
 
-/* Scroll timeline pagination markers */
 .project-dots {
   position: absolute; right: 2.5rem; top: 50%; transform: translateY(-50%);
   display: flex; flex-direction: column; gap: .6rem; z-index: 10;
@@ -397,7 +379,7 @@ section { padding: 7rem 4rem; }
 }
 .project-dot.active { background: var(--accent); transform: scale(1.4); }
 
-/* ── RESPONSIVE MOBILE OVERRIDES ── */
+
 @media (max-width: 900px) {
   .project-showcase-inner { 
     flex-direction: column !important; 
@@ -410,9 +392,7 @@ section { padding: 7rem 4rem; }
   }
   .ps-visual-frame { max-width: 440px; }
 }
-/* ══════════════════════════════
-   CONTACT
-══════════════════════════════ */
+/*-------- CONTACT ---------*/
 #contact { background: var(--text); color: var(--bg); text-align: center; }
 #contact .section-label { color: #F28A60; }
 #contact .section-title { color: var(--bg); }
@@ -431,9 +411,7 @@ section { padding: 7rem 4rem; }
 
 
 
-/* ══════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════ */
+/*--------- SCROLL REVEAL ---------*/
 .reveal {
   opacity: 0; transform: translateY(22px);
   transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
@@ -444,9 +422,7 @@ section { padding: 7rem 4rem; }
 .reveal-delay-3 { transition-delay: .3s; }
 .reveal-delay-4 { transition-delay: .4s; }
 
-/* ══════════════════════════════
-   RESPONSIVE
-══════════════════════════════ */
+/*------- RESPONSIVE ----------*/
 @media (max-width: 1100px) {
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -474,106 +450,93 @@ section { padding: 7rem 4rem; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .project-showcase { transition: none !important; }
 }
-/* Global setup using your variable system from earlier 
-body {
-    background-color: #0A0A0A;
-    color: #F0EDE6;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-}*/
 
-/* Section Container Setup (py-32 max-w-7xl mx-auto px-6) */
 .skills-section {
-    max-width: 1280px; /* max-w-7xl */
+    max-width: 1280px; 
     margin-left: auto;
     margin-right: auto;
-    padding: 8rem 1.5rem; /* py-32 (128px) and px-6 (24px) */
+    padding: 8rem 1.5rem;
     text-align: left;
 }
 
-/* Heading Styling */
+
 .skills-heading {
-    font-size: 2.25rem; /* text-4xl */
+    font-size: 2.25rem;
     font-weight: 700;
-    margin-bottom: 4rem; /* mb-16 */
+    margin-bottom: 4rem; 
     display: flex;
     align-items: center;
-    gap: 1rem; /* gap-4 */
+    gap: 1rem; 
     color: #ffffff;
     text-transform: uppercase;
-    letter-spacing: 0.1em; /* tracking-widest */
+    letter-spacing: 0.1em; 
 }
 
-/* Icon customization replacing text-blue-500 */
+
 .cpu-icon {
     width: 2rem;
     height: 2rem;
-    color:  var(--accent); /* blue-500 */
+    color:  var(--accent); 
 }
 
-/* Core Responsive Grid Layout logic */
+
 .skills-grid {
     display: grid;
-    /* Implements the responsive fluid grid breaks natively */
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid-cols-2 */
-    gap: 1.5rem; /* gap-6 */
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
 }
 
-/* Small Screens Breakpoint (sm:grid-cols-3) */
 @media (min-width: 640px) {
     .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-/* Medium Screens Breakpoint (md:grid-cols-4) */
+
 @media (min-width: 768px) {
     .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-/* Large Screens Breakpoint (lg:grid-cols-6) */
+
 @media (min-width: 1024px) {
     .skills-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 
-/* Individual Card Styling */
+
 .skill-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem; /* gap-4 */
-    padding: 1.5rem; /* p-6 */
-    min-height: 140px; /* min-h-[140px] */
-    background-color: rgba(255, 255, 255, 0.03); /* bg-white/[0.03] */
-    border: 1px solid rgba(255, 255, 255, 0.05); /* border-white/5 */
-    border-radius: 1rem; /* rounded-2xl */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* transition-all */
+    gap: 1rem; 
+    padding: 1.5rem; 
+    min-height: 140px; 
+    background-color: rgba(255, 255, 255, 0.03); 
+    border: 1px solid rgba(255, 255, 255, 0.05); 
+    border-radius: 1rem; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-/* Card Hover States */
 .skill-card:hover {
-    border-color: var(--accent); /* hover:border-blue-500/50 */
-    background-color: rgba(0,0,0,.07); /* hover:bg-blue-500/5 */
+    border-color: var(--accent); 
+    background-color: rgba(0,0,0,.07); 
 }
 
-/* Image Graphic Styling & Micro-interactions */
+
 .skill-icon {
-    width: 3rem; /* w-12 */
-    height: 3rem; /* h-12 */
+    width: 3rem; 
+    height: 3rem; 
     object-fit: contain;
-    filter: brightness(0.9); /* brightness-90 */
-    transition: transform 0.3s ease, filter 0.3s ease; /* transition-transform */
+    filter: brightness(0.9); 
+    transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
 .skill-card:hover .skill-icon {
-    transform: scale(1.1); /* group-hover:scale-110 */
-    filter: brightness(1.1); /* group-hover:brightness-110 */
+    transform: scale(1.1); 
+    filter: brightness(1.1); 
 }
 
-/* Label text accompanying icons */
 .skill-name {
-    font-size: 0.75rem; /* text-xs */
+    font-size: 0.75rem; 
     font-weight: 600;
-    letter-spacing: 0.1em; /* tracking-widest */
-    color: #9ca3af; /* text-gray-400 */
+    letter-spacing: 0.1em; 
+    color: #9ca3af; 
     text-transform: uppercase;
     text-align: center;
     margin: 0;
@@ -581,28 +544,25 @@ body {
 }
 
 .skill-card:hover .skill-name {
-    color: #ffffff; /* group-hover:text-white */
+    color: #ffffff; 
 }
 
-/* Custom Text-Only Layouts (JWT, OAuth, etc.) */
+
 .text-only-skill {
-    color: #3b82f6; /* text-blue-500 */
+    color: #3b82f6; 
     font-weight: 700;
-    font-size: 0.875rem; /* text-sm */
-    letter-spacing: 0.05em; /* tracking-wider */
+    font-size: 0.875rem; 
+    letter-spacing: 0.05em; 
     text-transform: uppercase;
     text-align: center;
 }
 
-
-
-/* ── AESTHETIC IMAGE FRAME & HOVER INTERACTION ── */
 .about-image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 320px; /* Limits size to keep it clean and professional */
+  max-width: 320px; 
   margin: 0 auto;
-  aspect-ratio: 4 / 5; /* Elegant portrait crop shape instead of standard square */
+  aspect-ratio: 4 / 5; 
 }
 
 .about-profile-img {
@@ -612,9 +572,8 @@ body {
   border-radius: 12px;
   background-color: var(--surface);
   
-  /* The Aesthetic Treatment: Grayscale styling */
   filter: grayscale(100%) contrast(1.05);
-  mix-blend-mode: multiply; /* Blends nicely with your cream background layout */
+  mix-blend-mode: multiply; 
   opacity: 0.9;
   
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
@@ -624,7 +583,6 @@ body {
   position: relative;
 }
 
-/* Behind-the-scenes framing accent line */
 .image-frame-border {
   position: absolute;
   top: 15px;
@@ -636,29 +594,28 @@ body {
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* Micro-Interaction Animation States */
 .about-image-wrapper:hover .about-profile-img {
-  transform: translate(-8px, -8px); /* Lifts image up and out slightly */
-  filter: grayscale(0%) contrast(1); /* Brings back subtle real color tones */
+  transform: translate(-8px, -8px); 
+  filter: grayscale(0%) contrast(1); 
   opacity: 1;
 }
 
 .about-image-wrapper:hover .image-frame-border {
-  transform: translate(8px, 8px); /* Pushes accent frame drop shadow out opposite way */
+  transform: translate(8px, 8px); 
 }
 
 #mouse-glow {
   position: fixed;
   top: 0;
   left: 0;
-  width: 500px; /* Size of the glow spotlight radius */
+  width: 500px; 
   height: 500px;
-  background: radial-gradient(circle, rgba(232, 98, 58, 0.2) 0%, transparent 50%); /* Uses your --accent color at a very low opacity */
+  background: radial-gradient(circle, rgba(232, 98, 58, 0.2) 0%, transparent 50%); 
   border-radius: 50%;
-  pointer-events: none; /* Crucial: stops the div from blocking mouse clicks on buttons */
-  z-index: 1; /* Sits behind text and cards but above the background */
+  pointer-events: none; 
+  z-index: 1; 
   
-  /* Centers the center of the circle exactly on your mouse cursor tip */
+
   transform: translate(calc(var(--mouse-x, 0px) - 250px), calc(var(--mouse-y, 0px) - 250px));
-  will-change: transform; /* Signals the browser to use GPU acceleration for lag-free movement */
+  will-change: transform; 
 }
